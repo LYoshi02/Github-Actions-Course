@@ -1,0 +1,10 @@
+name: 03 - Practice Project Issues
+
+on: issues
+
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show details
+        run: echo "${{ toJson(github) }}"
