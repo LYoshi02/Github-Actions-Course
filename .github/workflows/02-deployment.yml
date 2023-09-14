@@ -23,6 +23,8 @@ jobs:
       - name: Run tests
         run: npm test
   deploy:
+    # To run this job after the "test" job has finished
+    needs: test
     runs-on: ubuntu-latest
     defaults:
       run:
