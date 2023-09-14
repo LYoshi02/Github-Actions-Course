@@ -1,8 +1,16 @@
-name: Events Demo 1
-on: ...
+name: 04 - Events Demo 1
+on:
+  pull_request:
+    # Define activity types that trigger this event
+    types:
+      - opened
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./04-workflows/starting-project
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
