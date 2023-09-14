@@ -1,4 +1,4 @@
-name: 02 - Deploy Project 
+name: 03 - Deploy Project 
 
 # Allow multiple event triggers
 on: [push, workflow_dispatch]
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./02-basics/react-project
+        working-directory: ./03-basics/react-project
     steps:
       - name: Get code
         # Keyword to use an Action
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./02-basics/react-project
+        working-directory: ./03-basics/react-project
     steps:
       - name: Get code
         # Keyword to use an Action
