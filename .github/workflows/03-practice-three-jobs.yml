@@ -1,6 +1,9 @@
 name: 03 - Practice 3 Jobs
 
-on: push
+#on: push
+on:
+  push:
+    paths: '03-basics/practice-project/*'
 
 jobs:
     lint:
