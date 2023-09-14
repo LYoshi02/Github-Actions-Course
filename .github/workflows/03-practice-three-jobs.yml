@@ -1,0 +1,55 @@
+name: 03 - Practice 3 Jobs
+
+on: push
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+              working-directory: ./03-basics/practice-project
+        steps:
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm ci
+            - name: Lint code
+              run: npm run lint
+    test:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./03-basics/practice-project
+        steps:
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm ci
+            - name: Test code
+              run: npm run test
+    build:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./03-basics/practice-project
+        steps:
+            - name: Get code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm ci
+            - name: Build code
+              run: npm run build
+            - name: Deploy code
+              run: echo "Deploying..."
