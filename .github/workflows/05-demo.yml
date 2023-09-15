@@ -38,9 +38,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
-          path: |
-            05-artifacts/starting-project/dist
-            05-artifacts/starting-project/package.json
+          path: 05-artifacts/starting-project/dist
+          # Example for adding multiple paths
+          # path: |
+          #   05-artifacts/starting-project/dist
+          #   05-artifacts/starting-project/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
