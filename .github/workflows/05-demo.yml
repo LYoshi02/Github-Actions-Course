@@ -24,6 +24,9 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      # Map the publish step output to be a job output
+      script-file: ${{ steps.publish.outputs.script-file }}
     defaults:
       run:
         working-directory: ./05-artifacts/starting-project
@@ -34,6 +37,10 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      # Generate a simple value output
+      - name: Publish JS filename
+        id: publish
+        run: find dist/assets/*.js -type f -execdir echo '::set-output name=script-file::{}' ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -53,5 +60,7 @@ jobs:
           name: dist-files
       - name: Output contents
         run: ls
+      - name: Ouput filename
+        run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
