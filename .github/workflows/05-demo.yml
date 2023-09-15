@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - 05-artifacts/starting-project/*
+      - .github/workflows/05-demo.yml
 jobs:
   test:
     runs-on: ubuntu-latest
