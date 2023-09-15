@@ -1,7 +1,12 @@
 name: 03 - Deploy Project 
 
 # Allow multiple event triggers
-on: [push, workflow_dispatch]
+# on: [push, workflow_dispatch]
+
+on:
+  push:
+    paths: '03-basics/practice-project/*'
+  workflow_dispatch:
 
 jobs:
   test:

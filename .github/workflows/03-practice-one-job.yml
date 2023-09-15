@@ -1,6 +1,9 @@
 name: 03 - Practice 1 Job
 
-on: push
+#on: push
+on: 
+  push:
+    paths: '03-basics/practice-project/*'
 
 jobs:
   deploy:
