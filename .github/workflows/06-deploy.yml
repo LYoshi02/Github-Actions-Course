@@ -1,5 +1,6 @@
 name: 06 - Deployment
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
