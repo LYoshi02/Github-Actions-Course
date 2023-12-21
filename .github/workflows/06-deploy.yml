@@ -12,6 +12,8 @@ on:
 env:
   MONGODB_DB_NAME: gha-demo
 jobs:
+  # To run this job in an environment configured in the GitHub repository
+  environment: testing
   test:
     # Local env variables in this specific job
     env:
