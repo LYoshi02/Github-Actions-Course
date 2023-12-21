@@ -90,6 +90,7 @@ jobs:
       - name: Deploy
         run: echo "Deploying..."
   report:
+    needs: [lint, deploy]
     # Condition at job level
     if: failure()
     runs-on: ubuntu-latest
