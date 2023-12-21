@@ -1,10 +1,11 @@
 name: 07 - Website Deployment
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - 07-execution-flow/*
+      - 07-execution-flow/**
       - .github/workflows/07-execution-flow.yml
 jobs:
   lint:
@@ -19,7 +20,7 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: node_modules
+          path: 07-execution-flow/starting-project/node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
